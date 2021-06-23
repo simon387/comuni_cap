@@ -1,6 +1,6 @@
 import csv
 
-#cap cf array, 2, 5
+# cap cf array, 2, 5
 input_array = []
 
 
@@ -27,11 +27,16 @@ with open('docs/comuni_enc.csv') as csv_file:
 
 			all = []
 			row = next(reader)
-			row.append('Berry')
+			row.append('cap')
 			all.append(row)
 
 			for row in reader:
-				row.append('gatto')
+				for r in input_array:
+					national_code = r[1]
+					if national_code == row[1]:
+						row.append(r[0])
+						break
+
 				all.append(row)
 
 			writer.writerows(all)
