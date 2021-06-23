@@ -18,17 +18,17 @@ with open('docs/comuni_enc.csv') as csv_file:
 			line_count += 1
 	print(f'Processed {line_count} lines.')
 
-	print(len(input_array))
+	print(f'Len internal array {len(input_array)}')
 
 	with open('docs/old.csv', 'r') as csvinput:
 		with open('docs/result.csv', 'w') as csvoutput:
 			writer = csv.writer(csvoutput, lineterminator='\n')
 			reader = csv.reader(csvinput)
 
-			all = []
+			alls = []
 			row = next(reader)
 			row.append('cap')
-			all.append(row)
+			alls.append(row)
 
 			for row in reader:
 				for r in input_array:
@@ -37,6 +37,6 @@ with open('docs/comuni_enc.csv') as csv_file:
 						row.append(r[0])
 						break
 
-				all.append(row)
+				alls.append(row)
 
-			writer.writerows(all)
+			writer.writerows(alls)
