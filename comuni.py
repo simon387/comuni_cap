@@ -24,19 +24,17 @@ with open('docs/comuni_enc.csv') as csv_file:
 		with open('docs/result.csv', 'w') as csvoutput:
 			writer = csv.writer(csvoutput, lineterminator='\n')
 			reader = csv.reader(csvinput)
-
+			# header
 			alls = []
 			row = next(reader)
 			row.append('cap')
 			alls.append(row)
-
+			# values
 			for row in reader:
 				for r in input_array:
 					national_code = r[1]
 					if national_code == row[1]:
 						row.append(r[0])
 						break
-
 				alls.append(row)
-
 			writer.writerows(alls)
