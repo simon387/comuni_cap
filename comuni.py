@@ -10,12 +10,11 @@ with open('docs/comuni_enc.csv') as csv_file:
 	for row in csv_reader:
 		if line_count == 0:
 			print(f'Column names are {", ".join(row)}')
-			line_count += 1
 		else:
 			if row[2] != '':
 				print(f'{row[2]} {row[5]}')
 				input_array.append([row[2], row[5]])
-			line_count += 1
+		line_count += 1
 	print(f'Processed {line_count} lines.')
 	print(f'Len internal array: {len(input_array)}')
 	# writing to output
