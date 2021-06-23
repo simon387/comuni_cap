@@ -17,7 +17,6 @@ with open('docs/comuni_enc.csv') as csv_file:
 				input_array.append([row[2], row[5]])
 			line_count += 1
 	print(f'Processed {line_count} lines.')
-
 	print(f'Len internal array: {len(input_array)}')
 
 	with open('docs/old.csv', 'r') as csvinput:
