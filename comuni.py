@@ -3,7 +3,7 @@ import csv
 # cap cf array, 2, 5
 input_array = []
 
-
+# array init
 with open('docs/comuni_enc.csv') as csv_file:
 	csv_reader = csv.reader(csv_file, delimiter=',')
 	line_count = 0
@@ -18,7 +18,7 @@ with open('docs/comuni_enc.csv') as csv_file:
 			line_count += 1
 	print(f'Processed {line_count} lines.')
 	print(f'Len internal array: {len(input_array)}')
-
+	# writing to output
 	with open('docs/old.csv', 'r') as csvinput:
 		with open('docs/result.csv', 'w') as csvoutput:
 			writer = csv.writer(csvoutput, lineterminator='\n')
